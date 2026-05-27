@@ -3,17 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyVision</title>
+  <title>MyVision — Autorização</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; text-align: center;
+           margin: 0; padding: 40px 24px; background: #f2f2f7; }
+    h1   { font-size: 22px; margin-bottom: 8px; }
+    p    { color: #6e6e73; margin-bottom: 32px; }
+    a.btn {
+      display: inline-block; padding: 16px 40px;
+      background: #007AFF; color: white; border-radius: 14px;
+      font-size: 18px; font-weight: 600; text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>✓ Autorização concluída</h1>
+  <p>Toca no botão para voltar ao MyVision e concluir o registo.</p>
+  <a class="btn" id="btn" href="#">Abrir MyVision</a>
+
   <script>
     var qs   = window.location.search;
     var hash = window.location.hash;
-    window.location.replace('myvision://' + qs + hash);
+    var deep = 'myvision://' + qs + hash;
+    document.getElementById('btn').href = deep;
   </script>
-</head>
-<body>
-  <p style="font-family:sans-serif;text-align:center;margin-top:60px">
-    A abrir o MyVision&hellip;<br><br>
-    <a href="myvision://">Toca aqui se não abrir automaticamente</a>
-  </p>
 </body>
 </html>
